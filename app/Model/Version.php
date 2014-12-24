@@ -9,16 +9,6 @@ App::uses('AppModel', 'Model');
 class Version extends AppModel {
 
 /**
- * Use table
- *
- * @var mixed False or table name
- */
-	public $useTable = 'version';
-
-    public $displayField = 'name';
-
-
-/**
  * Validation rules
  *
  * @var array
