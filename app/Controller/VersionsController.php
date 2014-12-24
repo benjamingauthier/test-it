@@ -81,8 +81,8 @@ class VersionsController extends AppController {
 			$options = array('conditions' => array('Version.' . $this->Version->primaryKey => $id));
 			$this->request->data = $this->Version->find('first', $options);
 		}
-		$applications = $this->Version->Application->find('list');
-		$this->set(compact('applications'));
+		//$applications = $this->Version->Application->find('list');
+		//$this->set(compact('applications'));
 	}
 
 /**
@@ -105,4 +105,20 @@ class VersionsController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+    public function addVersionApplication($id_application = null) {
+        if ($this->request->is('post')) {
+            $this->Version->create();
+            $version = $this->request->data;
+            $version['Version']['applications_id'] = $id_application;
+            debug($version);
+            if ($this->Version->save($version)) {
+                $this->Session->setFlash('La nouvelle version a été créée', 'flash_success');
+                return $this->redirect(array('controller' => 'Applications','action' => 'view',$id_application));
+            } else {
+
+                $this->Session->setFlash(__('The version could not be saved. Please, try again.'));
+            }
+        }
+    }
 }

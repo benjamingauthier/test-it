@@ -6,6 +6,7 @@
 
 body {
     background-color: #f8f8f8;
+    font-family: "Avenir";
 }
 
 #wrapper {
@@ -346,4 +347,20 @@ table.dataTable thead .sorting:after {
 
 .panel-yellow a:hover {
     color: #df8a13;
+}
+
+#title {
+    font-size: 1.5em;
+}
+
+.application-panel-title {
+    text-align: center;
+}
+
+.application-panel-footer {
+    text-align: center;
+}
+
+h3.flash {
+    text-align: center;
 }

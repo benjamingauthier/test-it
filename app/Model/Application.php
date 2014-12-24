@@ -51,4 +51,26 @@ class Application extends AppModel {
 			'order' => ''
 		)
 	);
+
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+    public $hasMany = array(
+        'Version' => array(
+            'className' => 'Version',
+            'foreignKey' => 'applications_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
 }

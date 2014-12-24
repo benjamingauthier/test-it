@@ -36,7 +36,7 @@ class ApplicationsController extends AppController {
 		if (!$this->Application->exists($id)) {
 			throw new NotFoundException(__('Invalid application'));
 		}
-		$options = array('conditions' => array('Application.' . $this->Application->primaryKey => $id));
+        $options = array('conditions' => array('Application.' . $this->Application->primaryKey => $id));
 		$this->set('application', $this->Application->find('first', $options));
 	}
 

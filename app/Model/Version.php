@@ -15,6 +15,9 @@ class Version extends AppModel {
  */
 	public $useTable = 'version';
 
+    public $displayField = 'name';
+
+
 /**
  * Validation rules
  *
@@ -52,7 +55,7 @@ class Version extends AppModel {
  */
 	public $belongsTo = array(
 		'Applications' => array(
-			'className' => 'Applications',
+			'className' => 'Application',
 			'foreignKey' => 'applications_id',
 			'conditions' => '',
 			'fields' => '',
