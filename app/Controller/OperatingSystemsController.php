@@ -55,8 +55,6 @@ class OperatingSystemsController extends AppController {
 				$this->Session->setFlash(__('The operating system could not be saved. Please, try again.'));
 			}
 		}
-		$tests = $this->OperatingSystem->Test->find('list');
-		$this->set(compact('tests'));
 	}
 
 /**

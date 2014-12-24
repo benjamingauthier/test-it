@@ -120,5 +120,10 @@ class VersionsController extends AppController {
                 $this->Session->setFlash(__('The version could not be saved. Please, try again.'));
             }
         }
+        $this->loadModel('Application');
+        $application = $this->Application->find('first', array(
+            'conditions' => array('Application.id' => $id_application)
+        ));
+        $this->set('application',$application);
     }
 }

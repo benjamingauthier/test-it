@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">
-            <?php echo h($application['Application']['name'].' '.$application['OperatingSystems']['name']) ?>
+            <?php echo h($application['Application']['name'].' '.$application['OperatingSystem']['name']) ?>
             <?php echo $this->Html->link(__('New Version'), array('controller' => 'versions', 'action' => 'addVersionApplication', $application['Application']['id']),array('class' => 'btn btn-success navbar-btn')); ?>
         </h1>
 

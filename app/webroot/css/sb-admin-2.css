@@ -5,7 +5,7 @@
  */
 
 body {
-    background-color: #f8f8f8;
+    background-color: rgb(236, 240, 241);
     font-family: "Avenir";
 }
 
@@ -133,7 +133,7 @@ body {
         z-index: 1;
         position: absolute;
         width: 250px;
-        margin-top: 51px;
+        margin-top: 60px;
     }
 
     .navbar-top-links .dropdown-messages,
@@ -212,7 +212,7 @@ body {
 }
 
 .login-panel {
-    margin-top: 25%;
+    margin-top: 50%;
 }
 
 .flot-chart {
@@ -363,4 +363,50 @@ table.dataTable thead .sorting:after {
 
 h3.flash {
     text-align: center;
+}
+
+.btn-login {
+    text-align: center;
+}
+
+.panel-transparent {
+    color: rgb(236, 240, 241);
+    background: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(52, 152, 219,0.7)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(236, 240, 241,0.5)!important;
+}
+
+.btn-river input{
+   background-color: rgb(52, 152, 219);
+    border-color: rgb(41, 128, 185);
+}
+
+.navbar {
+    background:rgba(52, 73, 94,0.8);   /* for latest browsers */
+
+}
+
+.navbar li { color: #ff6071
+}
+
+.navbar-default.sidebar {
+    background-color: rgba(236, 240, 241,1.0);
+}
+
+.navbar-test{
+    padding-bottom: 4px;
+}
+
+.form-add {
+    width: 20%;
+}
+
+.btn-add {
+    width: 20%;
 }

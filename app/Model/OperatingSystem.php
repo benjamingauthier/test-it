@@ -23,4 +23,25 @@ class OperatingSystem extends AppModel {
 			),
 		),
 	);
+
+/**
+ * hasMany associations
+ *
+ * @var array
+ */
+    public $hasMany = array(
+        'Application' => array(
+            'className' => 'Application',
+            'foreignKey' => 'operating_systems_id',
+            'dependent' => false,
+            'conditions' => '',
+            'fields' => '',
+            'order' => '',
+            'limit' => '',
+            'offset' => '',
+            'exclusive' => '',
+            'finderQuery' => '',
+            'counterQuery' => ''
+        )
+    );
 }

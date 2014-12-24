@@ -43,8 +43,8 @@ class Application extends AppModel {
  * @var array
  */
 	public $belongsTo = array(
-		'OperatingSystems' => array(
-			'className' => 'OperatingSystems',
+		'OperatingSystem' => array(
+			'className' => 'OperatingSystem',
 			'foreignKey' => 'operating_systems_id',
 			'conditions' => '',
 			'fields' => '',

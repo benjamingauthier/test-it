@@ -2,7 +2,7 @@
     <div class="col-lg-12">
         <h1 class="page-header">
             <?php echo h($version['Applications']['name'].' '.$version['Version']['name'])?>
-            <?php echo $this->Html->link(__('New CheckUp'), array('controller' => 'checkups', 'action' => 'addCheckUpVersion', $version['Version']['id']),array('class' => 'btn btn-success navbar-btn')); ?>
+            <?php echo $this->Html->link(__('New CheckUp'), array('controller' => 'CheckUps', 'action' => 'addCheckUpVersion', $version['Version']['id']),array('class' => 'btn btn-success navbar-btn')); ?>
         </h1>
 
     </div>

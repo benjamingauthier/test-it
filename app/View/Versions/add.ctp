@@ -1,23 +1,31 @@
-<div class="versions form">
-<?php echo $this->Form->create('Version'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Version'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('description');
-		echo $this->Form->input('applications_id');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Add Version</h1>
+    </div>
+    <!-- /.col-lg-12 -->
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<div class="versions form">
+    <?php echo $this->Form->create('Version', array(
+            'inputDefaults' => array(
+                'class' => 'form-control form-add'
+            )
+        )
+    );; ?>
+    <fieldset>
 
-		<li><?php echo $this->Html->link(__('List Versions'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Applications'), array('controller' => 'applications', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Applications'), array('controller' => 'applications', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Check Ups'), array('controller' => 'check_ups', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Check Up'), array('controller' => 'check_ups', 'action' => 'add')); ?> </li>
-	</ul>
+        <?php
+        echo $this->Form->input('name');
+        echo $this->Form->input('description');
+        echo $this->Form->input('applications_id');
+        ?>
+    </fieldset>
+    <br>
+    <?php echo $this->Form->end(array(
+        'label' => 'Submit',
+        'class' => 'btn btn-primary btn-connexion',
+        'div' => array(
+            'class' => 'btn-login btn-add btn-river'
+        )
+    ));
+    ?>
 </div>

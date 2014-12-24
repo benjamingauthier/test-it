@@ -1,7 +1,18 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Add Application</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
 <div class="applications form">
-<?php echo $this->Form->create('Application'); ?>
+<?php echo $this->Form->create('Application', array(
+        'inputDefaults' => array(
+            'class' => 'form-control form-add'
+        )
+    )
+);; ?>
 	<fieldset>
-		<legend><?php echo __('Add Application'); ?></legend>
+
 	<?php
 		echo $this->Form->input('name');
 		echo $this->Form->input('description');
@@ -9,14 +20,13 @@
 		echo $this->Form->input('operating_systems_id');
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
-</div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-
-		<li><?php echo $this->Html->link(__('List Applications'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Operating Systems'), array('controller' => 'operating_systems', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Operating Systems'), array('controller' => 'operating_systems', 'action' => 'add')); ?> </li>
-	</ul>
+    <br>
+    <?php echo $this->Form->end(array(
+        'label' => 'Submit',
+        'class' => 'btn btn-primary btn-connexion',
+        'div' => array(
+            'class' => 'btn-login btn-add btn-river'
+        )
+    ));
+    ?>
 </div>
