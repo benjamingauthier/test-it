@@ -53,3 +53,9 @@ Our primary goal is to provide a structured framework that enables PHP users at 
 Bake
 
 php Console/cake.php -app `pwd` bake
+
+Console/cake schema create DbAcl
+Console/cake acl create aco root controllers
+Console/cake AclExtras.AclExtras aco_sync
+
+ACL Extras : https://github.com/markstory/acl_extras/

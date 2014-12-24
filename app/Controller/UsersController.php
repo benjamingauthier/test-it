@@ -47,6 +47,7 @@ class UsersController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+            debug($this->request->data);
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved.'));
@@ -55,6 +56,8 @@ class UsersController extends AppController {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 			}
 		}
+        $groups = $this->User->Group->find('list');
+        $this->set(compact('groups'));
 	}
 
 /**
@@ -101,4 +104,48 @@ class UsersController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+    public function login() {
+        if ($this->request->is('post')) {
+            if ($this->Auth->login()) {
+                return $this->redirect($this->Auth->redirectUrl());
+            } else {
+                $this->Session->setFlash(__('Votre nom d\'user ou mot de passe sont incorrects.'));
+            }
+        }
+        if ($this->Session->read('Auth.User')) {
+            $this->Session->setFlash('Vous êtes connecté!');
+            return $this->redirect('/');
+        }
+    }
+
+    public function logout() {
+        $this->Session->setFlash('Au-revoir');
+        return $this->redirect($this->Auth->logout());
+    }
+
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow('initDB');
+    }
+
+    public function initDB() {
+        $group = $this->User->Group;
+        // Autorise l'accès à tout pour les admins
+        $group->id = 1;
+        $this->Acl->allow($group, 'controllers');
+
+        // Autorise l'accès aux posts et widgets pour les managers
+        $group->id = 2;
+        $this->Acl->deny($group, 'controllers');
+        $this->Acl->allow($group, 'controllers/Applications');
+
+
+        // Permet aux utilisateurs classiques de se déconnecter
+        $this->Acl->allow($group, 'controllers/users/logout');
+
+        // Nous ajoutons un exit pour éviter d'avoir un message d'erreur affreux "missing views" (manque une vue)
+        echo "tout est ok";
+        exit;
+    }
 }
