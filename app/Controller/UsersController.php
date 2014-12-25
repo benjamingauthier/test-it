@@ -108,9 +108,11 @@ class UsersController extends AppController {
     public function login() {
         if ($this->request->is('post')) {
             if ($this->Auth->login()) {
+                $this->Session->write('User.name', $this->User->firstname);
                 return $this->redirect($this->Auth->redirectUrl());
             } else {
-                $this->Session->setFlash(__('Votre nom d\'user ou mot de passe sont incorrects.'));
+                $this->Session->setFlash(__(''));
+                $this->Session->setFlash('Wrong username or password', 'flash_fail');
             }
         }
         if ($this->Session->read('Auth.User')) {
@@ -120,7 +122,7 @@ class UsersController extends AppController {
     }
 
     public function logout() {
-        $this->Session->setFlash('Au-revoir');
+        $this->Session->setFlash('Good bye !', 'flash_success');
         return $this->redirect($this->Auth->logout());
     }
 

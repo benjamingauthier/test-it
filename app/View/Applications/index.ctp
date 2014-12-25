@@ -11,10 +11,10 @@
 <div class="row">
 	<?php foreach ($applications as $application): ?>
         <div class="col-lg-3">
-            <div class="panel panel-primary">
+            <div class="panel panel-index">
                 <div class="panel-heading">
                     <h3 class="panel-title application-panel-title">
-                        <?php echo $this->Html->link(__($application['Application']['name']), array('action' => 'view', $application['Application']['id'])) ?>
+                        <?php echo $this->Html->link(__($application['Application']['name'].' '.$application['OperatingSystem']['name']), array('action' => 'view', $application['Application']['id'])) ?>
                     </h3>
                 </div>
                 <div class="panel-body">

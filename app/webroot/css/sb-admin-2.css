@@ -41,8 +41,13 @@ body {
 }
 
 .navbar-top-links li a {
+    color: #ffffff;
     padding: 15px;
     min-height: 50px;
+}
+
+.navbar-top-links li a i {
+    color: rgba(52, 152, 219,1.0);
 }
 
 .navbar-top-links .dropdown-menu li {
@@ -54,6 +59,7 @@ body {
 }
 
 .navbar-top-links .dropdown-menu li a {
+    color: #000000;
     padding: 3px 20px;
     min-height: 0;
 }
@@ -133,7 +139,7 @@ body {
         z-index: 1;
         position: absolute;
         width: 250px;
-        margin-top: 60px;
+        margin-top: 64px;
     }
 
     .navbar-top-links .dropdown-messages,
@@ -409,4 +415,25 @@ h3.flash {
 
 .btn-add {
     width: 20%;
+}
+
+.navbar-header {
+    padding-bottom: 10px;
+}
+
+.panel-index {
+    color: rgb(1, 1, 1);
+    background: none;
+}
+
+.panel-index .panel-heading{
+    background: rgba(52, 152, 219,0.7)!important;
+}
+
+.panel-index .panel-body{
+    background: rgba(236, 240, 241,0.8)!important;
+}
+
+.dropdown-menu li > a:hover {
+    color: rgba(52, 73, 94,1.0);
 }

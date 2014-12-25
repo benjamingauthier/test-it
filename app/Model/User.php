@@ -7,6 +7,10 @@ App::uses('AuthComponent', 'Controller/Component');
  */
 class User extends AppModel {
 
+    public $virtualFields = array(
+        'name' => "CONCAT(User.firstname, ' ', User.lastname)"
+    );
+
 /**
  * Validation rules
  *
@@ -34,6 +38,7 @@ class User extends AppModel {
 			),
 		),
 	);
+
     public $belongsTo = array(
         'Group' => array(
             'className' => 'Group',

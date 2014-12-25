@@ -23,7 +23,7 @@ class ApplicationsController extends AppController {
 	public function index() {
 		$this->Application->recursive = 0;
 		$this->set('applications', $this->Paginator->paginate());
-	}
+    }
 
 /**
  * view method
